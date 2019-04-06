@@ -37,10 +37,7 @@ def search(bot, update, args):
         if podcasts == {}:
             bot.send_message(chat_id=update.message.chat_id, text="Идёт получение списка подкастов. Это займёт около 5 минут.")
             parser.main()
-        title = ''
-        for arg in args:
-            title += arg + ' '
-        title = title[:-1]
+        title = ' '.join(args)
         substr = ''
         search_results = []
         for k in podcasts.keys():
